@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+	--pagebg: #cecece;
+	--main: #102581;
+	--text: #191919;
+	--textdesta: #cecece;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Patrick Hand', cursive;
+	background-color: var(--pagebg);
+	color: var(--text);
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.banner {
+	height: 100px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--main);
+	color: var(--textdesta);
+	display: flex;
+}
+
+.banner h1 {
+	align-items: center;
+	margin: 0 auto;
+}
+
+footer div {
+	height: 60px;
+	width: 100%;
+	background-color: var(--main);
+	color: var(--textdesta);
+	font-size: 16px;
+	font-weight: lighter;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+footer div p {
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+}

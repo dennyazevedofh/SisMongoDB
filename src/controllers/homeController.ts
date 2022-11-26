@@ -39,6 +39,7 @@ export const home = (req: Request, res: Response) => {
 	let expensiveList = Product.getFromPriceAfter(priceFilter);
 
 	res.render('pages/home', {
+		titulo: 'Página Principal',
 		firstName: 'Denny',
 		lastName: 'Azevedo',
 		showOld,
