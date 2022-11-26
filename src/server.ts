@@ -3,8 +3,10 @@ import path from 'path';
 import mustache from 'mustache-express';
 import dotenv from 'dotenv';
 import mainRoutes from './routes/index';
+import { mongoConnect } from "./database/mongo";
 
 dotenv.config();
+mongoConnect();
 const server = express();
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));

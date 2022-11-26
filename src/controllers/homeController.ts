@@ -1,17 +1,31 @@
 import { Request, Response } from 'express';
 import { Product } from '../models/Product';
+import User from '../models/User';
 
 type frase = {
 	text: string,
 	author: string
 }
 
-export const home = (req: Request, res: Response) => {
-	let age: number = 58;
+export const home = async (req: Request, res: Response) => {
+	let usuarios = await User
+		.find({ interests: "Carro" })
+		.sort({ "fullName.lastName": 1, age: -1});
+	console.log("USUARIOS", usuarios);
+
 	let showOld: boolean = false;
 	let priceFilter: number = 12
+	let firstName = "John"
+	let lastName = "Doe"
+	let age: number = 35;
 
-	if (age > 35) {
+	if (usuarios.length > 0) {
+		firstName = usuarios[0].fullName.firstName;
+		lastName = usuarios[0].fullName.lastName;
+		age = usuarios[0].age;
+	}
+	
+	if (age > 30) {
 		showOld = true;
 	}
 	
@@ -40,8 +54,8 @@ export const home = (req: Request, res: Response) => {
 
 	res.render('pages/home', {
 		titulo: 'Página Principal',
-		firstName: 'Denny',
-		lastName: 'Azevedo',
+		firstName,
+		lastName,
 		showOld,
 		products: list,
 		priceFilter,
