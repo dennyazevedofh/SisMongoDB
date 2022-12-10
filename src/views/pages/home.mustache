@@ -1,41 +1,14 @@
 {{>partials/header}}
 
 <main class="container">
-	<h3>Opa {{firstName}} {{lastName}}, tudo bem?</h3>
-	<h3>
-		{{#showOld}}
-			Como vai a vida?
-		{{/showOld}}
-		{{^showOld}}
-			Beleza?
-		{{/showOld}}
-	</h3>
-	<hr />
-	<h2>Produtos</h2>
-	<ul>
-		{{#products}}
-			{{>partials/productItem}}
-		{{/products}}
-	</ul>
-	<hr />
-	<h2>Produtos a partir de R$ {{priceFilter}}</h2>
-	<ul>
-		{{#expensives}}
-			{{>partials/productItem}}
-		{{/expensives}}
-		{{^expensives}}
-			<h2>Não foram encontrados produtos com este valor</h2>
-		{{/expensives}}
-	</ul>
+	<h3>Lista de Usuários</h3>
 	<hr />
 	<ul>
-		{{#fraseDoDia}}
-			{{>partials/fraseItem}}
-		{{/fraseDoDia}}
-		{{^fraseDoDia}}
-			</h4>Não há frases motivacionais hoje.</h4>
-		{{/fraseDoDia}}
+		{{#users}}
+			{{>partials/userItem}}
+		{{/users}}
 	</ul>
+
 </main>
 
 {{>partials/footer}}

@@ -1,27 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Zen+Dots&display=swap');
 
 :root {
-	--pagebg: #cecece;
-	--main: #102581;
-	--text: #191919;
-	--textdesta: #cecece;
+	--bgBanner: #228B22;
+	--bgMenu: #32CD32;
+	--bgPage: #F5F5F5;
+	--destaque: #006400;
+	--alerta: #800000;
+	--aviso: #FF8C00;
+	--sucesso: #6B8E23;
+	--textoPadrao: #363636;
+	--textoFundoEscuro: #D3D3D3;
+	--bgEntrada: #FFF8DC;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 
 body {
 	font-family: 'Patrick Hand', cursive;
-	background-color: var(--pagebg);
-	color: var(--text);
+	background-color: var(--bgPage);
+	color: var(--textoPadrao);
+}
+
+.full {
+	width: 100% !important;
 }
 
 .container {
 	width: 1200px;
 	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .banner {
@@ -29,21 +44,25 @@ body {
 	width: 100%;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--main);
-	color: var(--textdesta);
+	background-color: var(--bgBanner);
+	color: var(--textoFundoEscuro);
 	display: flex;
+	box-shadow: 0px 3px 2px var(--textoPadrao);
 }
 
 .banner h1 {
 	align-items: center;
 	margin: 0 auto;
+	font-family: 'Zen Dots', cursive;
 }
 
 footer div {
 	height: 60px;
 	width: 100%;
-	background-color: var(--main);
-	color: var(--textdesta);
+	background-color: var(--bgBanner);
+	color: var(--textoFundoEscuro);
+	box-shadow: 0px 3px 2px var(--textoPadrao) inset;
+	font-family: 'Zen Dots', cursive;
 	font-size: 16px;
 	font-weight: lighter;
 	margin: 0 auto;
@@ -58,4 +77,38 @@ footer div p {
 	margin: 0 auto;
 	width: 100%;
 	display: flex;
+}
+
+nav {
+	width: 100%;
+	background-color: var(--bgMenu);
+	box-shadow: 0px 3px 2px var(--textoPadrao);
+	color: var(--textoFundoEscuro);
+	padding: 15px 0;
+	margin-bottom: 15px;
+}
+
+nav ul {
+	list-style: none;
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+nav ul li a {
+	text-decoration: none;
+	padding: 5px 15px;
+	border-radius: 10px;
+	background-color: var(--bgBanner);
+	color: var(--textoFundoEscuro);
+}
+
+nav ul li:hover a {
+	background-color: var(--destaque);
+}
+
+nav ul li.active a {
+	background-color: var(--destaque);
+	cursor: default;
 }
