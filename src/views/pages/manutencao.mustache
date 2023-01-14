@@ -1,0 +1,42 @@
+{{>partials/header}}
+
+<main class="container">
+
+	{{#localizar}}
+	<div class="buscar">
+		<form method="POST" action="/buscar">
+			<input type='text' name='firstName' placeholder="Digite seu nome" />
+			<input type='text' name='lastName' placeholder="Digite seu sobrenome" />
+			<input type='submit' value='Buscar' />
+		</form>
+	</div>
+	{{/localizar}}
+
+	{{#usuario}}
+	<div class="cadastro">
+		<fieldset>
+			<legend> Atualizar ou Excluir um Usuário </legend>
+			<form method="POST" action="/novo-usuario">
+				<input 
+					type='text' 
+					name='firstName' 
+					placeholder="Digite seu nome" 
+					value={{fullName.firstName}}
+				/>
+				<br />
+				<input type='text' name='midleName' placeholder="Digite seu nome do meio" /><br />
+				<input type='text' name='lastName' placeholder="Digite seu sobrenome" /><br />
+				<input type='email' name='email' placeholder="Digite seu e-mail" /><br />
+				<input type='text' name='age' placeholder="Digite sua idade" /><br />
+				<input type='text' name='interests' placeholder="Digite seus interesses (separados por virgula)" /><br />
+				<input type='submit' value='Inserir' />
+			</form>
+			{{#emptyFields}}
+				<h3>Preencha os campos obrigatórios!</h3>
+			{{/emptyFields}}
+		</fieldset>
+	</div>
+	{{/usuario}}
+</main>
+
+{{>partials/footer}}

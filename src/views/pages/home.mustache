@@ -1,14 +1,16 @@
 {{>partials/header}}
 
 <main class="container">
-	<h3>Lista de Usuários</h3>
-	<hr />
-	<ul>
-		{{#users}}
-			{{>partials/userItem}}
-		{{/users}}
-	</ul>
-
+	<div class="cards">
+		<div class="cards-titulo">
+			<h3>Lista de Usuários</h3>
+		</div>
+		<div class="cards-list">
+			{{#users}}
+				{{>partials/userItem}}
+			{{/users}}
+		</div>
+	</div>
 </main>
 
 {{>partials/footer}}

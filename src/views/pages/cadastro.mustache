@@ -1,0 +1,23 @@
+{{>partials/header}}
+
+<main class="container">
+	<div class="cadastro">
+		<fieldset>
+			<legend> Adiconar um Novo Usuário </legend>
+			<form method="POST" action="/novo-usuario">
+				<input type='text' name='firstName' placeholder="Digite seu nome" /><br />
+				<input type='text' name='midleName' placeholder="Digite seu nome do meio" /><br />
+				<input type='text' name='lastName' placeholder="Digite seu sobrenome" /><br />
+				<input type='email' name='email' placeholder="Digite seu e-mail" /><br />
+				<input type='text' name='age' placeholder="Digite sua idade" /><br />
+				<input type='text' name='interests' placeholder="Digite seus interesses (separados por virgula)" /><br />
+				<input type='submit' value='Inserir' />
+			</form>
+			{{#emptyFields}}
+				<h3>Preencha os campos obrigatórios!</h3>
+			{{/emptyFields}}
+		</fieldset>
+	</div>
+</main>
+
+{{>partials/footer}}
